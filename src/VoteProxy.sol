@@ -59,13 +59,13 @@ contract VoteProxy {
     }
 
     function lock(uint256 wad) public auth {
-        gov.pull(cold, wad);   // mkr from cold
-        chief.lock(wad);       // mkr out, ious in
+        gov.pull(cold, wad);   // VDGT from cold
+        chief.lock(wad);       // VDGT out, ious in
     }
 
     function free(uint256 wad) public auth {
-        chief.free(wad);       // ious out, mkr in
-        gov.push(cold, wad);   // mkr to cold
+        chief.free(wad);       // ious out, VDGT in
+        gov.push(cold, wad);   // VDGT to cold
     }
 
     function freeAll() public auth {
